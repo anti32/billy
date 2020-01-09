@@ -75,7 +75,7 @@ var startTime time.Time
 
 func statsReporter() {
 	for {
-		time.Sleep(10 * time.Second)
+		time.Sleep(1 * time.Second)
 		d := time.Since(startTime).Seconds()
 		n := atomic.LoadUint64(&rowsGenerated)
 		log.Printf("generated %d out of %d rows at %.0f rows/sec", n, rowsTotal, float64(n)/d)
